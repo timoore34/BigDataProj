@@ -7,7 +7,54 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <Grid Background="Gray">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="150"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="300"/>
+                <ColumnDefinition Width="300"/>
+                <ColumnDefinition Width="300"/>
+            </Grid.ColumnDefinitions>
+            <Canvas Grid.Column="0">
+                <Image Name="I1" Height="100" Margin="100, 50" Width="100"/>
+            </Canvas>
+            <Canvas Grid.Column="1">
+                <Image Name="I2" Height="100" Margin="100, 50" Width="100"/>
+            </Canvas>
+            <Canvas Grid.Column="2">
+                <Image Name="I3" Height="100" Margin="100, 50" Width="100"/>
+            </Canvas>
+        </Grid>
 
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="450"/>
+                <ColumnDefinition Width="450"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="25"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <TextBlock Name="searchPrompt" Text="Enter postal code" Grid.Row="0" Grid.Column="0" HorizontalAlignment="left"/>
+            <TextBox Name="search" Grid.Row="0" Grid.Column="0" HorizontalAlignment="right" Width="200"/>
+            <Button Name="btnSearch" Content="Search" Grid.Row="0" Grid.Column="1" HorizontalAlignment="left" Width="100"/>
+            <TextBlock Name="listPrompt" Text="Places ->" Grid.Row="0" Grid.Column="1" Width="100" HorizontalAlignment="Center"/>
+            <ComboBox Name ="placeList" Grid.Row="0" Grid.Column="1" Width="100" HorizontalAlignment="Right"/>
+            <StackPanel Name="placeInfo" Grid.Column="0" Grid.Row="1">
+                <TextBlock Name="name" Text="Name"/>
+                <TextBlock Name="website" Text="Website"/>
+                <TextBlock Name="address" Text="Address"/>
+                <TextBlock Name="postalCode" Text="Postal Code"/>
+            </StackPanel>
+            <StackPanel Name="reviews" Grid.Column="1" Grid.Row="1">
+                <TextBlock Name="stars" Text="Stars"/>
+                <TextBlock Name="date" Text="Date"/>
+                <TextBlock Name="descrip" Text="Description"/>
+            </StackPanel>
+        </Grid>
     </Grid>
+
 </Page>
